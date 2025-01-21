@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import supabase from '../helper/supabaseClient';
 import { Link, useNavigate } from 'react-router-dom';
+import { Form, Button, Container, Alert } from 'react-bootstrap';
 
-function Register() {
-
+function Login() {
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -33,38 +33,47 @@ function Register() {
         setPassword('');
     };
 
-
-  return (
-    <div>
-                <h2>Register</h2>
-                <br />
-                {message && <span>{message}</span>}
-                <form onSubmit={handleSubmit}>
-                    <label>Email</label>
-                    <input
-                        onChange={(e) => setEmail(e.target.value)}
-                        value={email}
+    return (
+        <Container className="mt-5 login-ctn">
+            <h2>Sign In</h2>
+            <br />
+            {message && <Alert variant="danger">{message}</Alert>}
+            <Form onSubmit={handleSubmit}>
+                <Form.Group controlId="formEmail">
+                    <Form.Label>Email</Form.Label>
+                    <Form.Control
                         type="email"
-                        placeholder="email"
+                        placeholder="Enter email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                         required
                     />
-                    <br />
-                    <label>Password</label>
-                    <input
-                        onChange={(e) => setPassword(e.target.value)}
-                        value={password}
+                </Form.Group>
+                <br />
+                
+                <Form.Group controlId="formPassword" className="d-flex justify-content-between align-items-center">
+                    <Form.Label className="mb-0">Password</Form.Label>
+                    <Link to="#" class="info-txt2">Forgotten Password</Link>
+                </Form.Group>
+                <Form.Group controlId="formPassword">
+                    <Form.Control
                         type="password"
                         placeholder="Password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
                         required
                     />
-        
-                    <button type="submit">Log In</button>
-                </form>
+                </Form.Group>
                 <br />
-                <span>Don't have an account? </span>
-                <Link to="/register">Register.</Link>
-            </div>
-  )
+                <Button variant="primary" type="submit">
+                    Sign In
+                </Button>
+            </Form>
+            <br />
+            <span class="info-txt">Don't have an account? <Link to="/register" class="info-txt2">Register.</Link></span>
+    
+        </Container>
+    );
 }
 
-export default Register
+export default Login;

@@ -50,20 +50,32 @@ button:disabled {
 
 /* Log In Page */
 
-.login-ctn {
+.login-ctn,
+.register-ctn {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 40px;
-  width: 100%;
   background-color: #D9D9D9;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  width: 80%;
+  max-width: 1000px;
+}
+
+.home-title{
+  font-size: 2rem;
+  font-weight: bold;
+  color: #000000;
 }
 
 form {
-  width: 80%;
+  width: 60%;
   color: #000000;
 }
 
@@ -95,10 +107,9 @@ form button:hover {
   background-color: #0056b3;
 }
 
-.info-txt{
+.info-txt {
   color: #000000;
 }
-
 
 .info-txt2 {
   font-weight: normal;
@@ -108,4 +119,31 @@ form button:hover {
 .info-txt2:hover {
   font-weight: bold;
   text-decoration: none;
+}
+
+/* Register */
+
+/* Media Queries for Tablet */
+@media (max-width: 768px) {
+  .login-ctn, .register-ctn {
+    padding: 20px;
+    width: 90%;
+    height: fit-content;
+  }
+
+  form {
+    width: 100%;
+  }
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 576px) {
+  .login-ctn, .register-ctn {
+    padding: 10px;
+    width: 90%;
+  }
+
+  form {
+    width: 100%;
+  }
 }

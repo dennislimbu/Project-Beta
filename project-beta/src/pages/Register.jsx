@@ -7,6 +7,7 @@ function Register() {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [passwordConfirmation, setPasswordConfirmation] = useState('');
   const [message, setMessage] = useState('');
 
   const handleSubmit = async (e) => {
@@ -34,8 +35,8 @@ function Register() {
   };
 
   return (
-    <Container className="mt-5">
-      <h2>Regester</h2>
+    <Container className="register-ctn">
+      <h2 className="home-title">Register</h2>
       <br />
       {message && <Alert variant="danger">{message}</Alert>}
       <Form onSubmit={handleSubmit}>
@@ -61,13 +62,24 @@ function Register() {
           />
         </Form.Group>
         <br />
+        <Form.Group controlId="formPassword">
+          <Form.Label>Password Confirmation</Form.Label>
+          <Form.Control
+            type="Password"
+            placeholder="Password Confirmation"
+            value={password}
+            onChange={(e) => setPasswordConfirmation(e.target.value)}
+            required
+          />
+        </Form.Group>
+        <br />
         <Button variant="primary" type="submit">
           Sign Up
         </Button>
       </Form>
       <br />
-      <span>Already have an account? </span>
-      <Link to="/login">Log in</Link>
+      <span className='info-txt'>Already have an account? </span>
+      <Link to="/login" className="font-weight-bold info-txt2">Log in</Link>
     </Container>
   );
 }

@@ -34,8 +34,8 @@ function Login() {
     };
 
     return (
-        <Container className="mt-5 login-ctn">
-            <h2>Sign In</h2>
+        <Container className="login-ctn">
+            <h2 className="home-title">Sign In</h2>
             <br />
             {message && <Alert variant="danger">{message}</Alert>}
             <Form onSubmit={handleSubmit}>
@@ -50,10 +50,9 @@ function Login() {
                     />
                 </Form.Group>
                 <br />
-                
                 <Form.Group controlId="formPassword" className="d-flex justify-content-between align-items-center">
                     <Form.Label className="mb-0">Password</Form.Label>
-                    <Link to="#" class="info-txt2">Forgotten Password</Link>
+                    <Link to="#" className="info-txt2">Forgotten Password</Link>
                 </Form.Group>
                 <Form.Group controlId="formPassword">
                     <Form.Control
@@ -66,12 +65,12 @@ function Login() {
                 </Form.Group>
                 <br />
                 <Button variant="primary" type="submit">
-                    Sign In
+                    Log In
                 </Button>
             </Form>
             <br />
-            <span class="info-txt">Don't have an account? <Link to="/register" class="info-txt2">Register.</Link></span>
-    
+            <span className='info-txt'>Don't have an account? </span>
+            <Link to="/register" className="font-weight-bold info-txt2">Register</Link>
         </Container>
     );
 }

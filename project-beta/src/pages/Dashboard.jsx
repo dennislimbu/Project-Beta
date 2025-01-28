@@ -1,20 +1,14 @@
 import React from 'react';
-import supabase from '../helper/supabaseClient';
-import { useNavigate } from 'react-router-dom';
+import { Container } from 'react-bootstrap';
+import Sidebar from '../components/Navbar';
 
 function Dashboard() {
-  const navigate = useNavigate();
-
-  const signOut = async () => {
-    const { error } = await supabase.auth.signOut();
-    if (error) throw error;
-    navigate('/login');
-  };
-
   return (
-    <div>
-      <h1>Dashboard</h1>
-      <button onClick={signOut}>Sign Out</button>
+    <div className="d-flex">
+      <Sidebar />
+      <Container className="mt-5">
+        <h1>Welcome to the Dashboard</h1>
+      </Container>
     </div>
   );
 }

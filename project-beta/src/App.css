@@ -211,16 +211,18 @@ form button:hover {
   width: 100%;
 }
 
-* Accordion Custom Styles */
+/* Accordion Custom Styles */
 .accordion-button {
   background-color: #31184C;
   color: #fff;
   border: none;
+  border-radius: 0; /* Remove border-radius */
 }
 
 .accordion-button:not(.collapsed) {
   background-color: #442569;
   color: #fff;
+  border-radius: 0; /* Remove border-radius */
 }
 
 .accordion-button:focus {

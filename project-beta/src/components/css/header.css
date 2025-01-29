@@ -1,7 +1,7 @@
 /* Header CSS */
 
 .header-custom {
-    background-color: #442569;
+    background-color: #31184C;
     color: #fff;
     padding: 10px 20px;
   }
@@ -17,6 +17,7 @@
   .user-image {
     width: 40px;
     height: 40px;
+    border-radius: 50%;
   }
   
   .user-details {

@@ -4,7 +4,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faTachometerAlt, faCalendarAlt, faBell, faCog, faUsers, faUser, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import supabase from '../helper/supabaseClient';
-import '../App.css';
+import './css/NavBar.css';
 
 function Sidebar() {
   const navigate = useNavigate();
@@ -30,7 +30,7 @@ function Sidebar() {
     <Navbar className="navbar-custom flex-column vh-90">
       <div className='container-fluid h-100'>
         <div className='row h-100 w-70'>
-          <Navbar.Collapse id="basic-navbar-nav" className="d-flex flex-column justify-content-start align-items-start mt-3 mb-1 h-auto">
+          <Navbar.Collapse id="basic-navbar-nav" className="d-flex flex-column justify-content-start align-items-start mt-1 mb-1 h-auto">
             {/* Search Content */}
             <Form className="d-flex align-items-start w-100 mt-5">
               <FormControl

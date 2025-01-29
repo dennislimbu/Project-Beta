@@ -121,138 +121,12 @@ form button:hover {
   text-decoration: none;
 }
 
-
-/* Nav Bar */
-.navbar-custom,
-.card-effect {
-  background-color: #31184C;
-  color: #fff;
-}
-
-.navbar-custom .navbar-brand,
-.navbar-custom .nav-link,
-.navbar-custom .nav-dropdown,
-.navbar-custom .form-control,
-.navbar-custom .btn-outline-light {
-  color: #fff;
-  width: 100%;
-  margin-bottom: 5px;
-}
-
-.navbar-custom .nav-link:hover,
-.navbar-custom .nav-dropdown:hover,
-.navbar-custom .btn-outline-light:hover,
-.navbar-custom .accordion-button:hover {
-  color: #fff;
-  text-decoration: none;
-  background-color: #442569;
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
-  width: 100%;
-}
-
-.navbar-custom .nav-link.active,
-.navbar-custom .nav-dropdown.active,
-.navbar-custom .btn-outline-light.active,
-.navbar-custom .accordion-button.active {
-  color: #fff;
-  text-decoration: none;
-  background-color: #442569;
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
-  width: 100%;
-}
-
-
-.navbar-custom .form-control {
-  background-color: #fff;
-  color: #000;
-}
-
-.navbar-custom .btn-outline-light {
-  border-color: #fff;
-}
-
-.navbar-custom .btn-outline-light:hover {
-  background-color: #442569;
-  color: #fff;
-  width: 100%;
-}
-
-.navbar-custom .navbar-collapse {
-  flex-grow: 2;
-}
-
-.navbar-custom .nav {
-  flex-direction: column;
-}
-
-.navbar-custom .nav-dropdown {
-  color: #fff;
-}
-
-.navbar-custom .nav-dropdown .dropdown-item {
-  color: #000;
-}
-
-.navbar-custom .nav-dropdown .dropdown-item:hover,
-.navbar-custom .nav-dropdown .dropdown-item.active {
-  background-color: #442569;
-  color: #fff;
-  width: 100%;
-}
-
-.navbar-custom .mt-auto {
-  margin-top: auto;
-}
-
-.divider {
-  border-top: 2px solid #fff;
-  width: 100%;
-}
-
-/* Accordion Custom Styles */
-.accordion-button {
-  background-color: #31184C;
-  color: #fff;
-  border: none;
-  border-radius: 0; /* Remove border-radius */
-}
-
-.accordion-button:not(.collapsed) {
-  background-color: #442569;
-  color: #fff;
-  border-radius: 0; /* Remove border-radius */
-}
-
-.accordion-button:focus {
-  box-shadow: none;
-}
-
-.accordion-body {
-  background-color: #442569;
-  color: #fff;
-}
-
-.accordion-item {
-  border: none;
-}
-
-.nav-dropdown-item.active {
-  background-color: #31184C;
-  color: #fff;
-}
-
 /* Media Queries for Tablet */
 @media (max-width: 768px) {
   .login-ctn, .register-ctn {
     padding: 20px;
     width: 100%;
     height: fit-content;
-  }
-
-  form {
-    width: 100%;
   }
 }
 
@@ -261,13 +135,6 @@ form button:hover {
   .login-ctn, .register-ctn {
     padding: 10px;
     width: 100%; 
-  }
-
-  form {
-    width: 100%; 
-  }
-  .navbar-custom .nav-text {
-    display: none;
   }
 
 }

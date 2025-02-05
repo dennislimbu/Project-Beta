@@ -119,6 +119,22 @@ function AddEmployee() {
                       onChange={(e) => handleChange('personalInfo', 'lastName', e.target.value)}
                     />
                   </Form.Group>
+                  <Form.Group controlId="phone">
+                    <Form.Label>Phone Number</Form.Label>
+                    <Form.Control
+                      type="text"
+                      value={formData.personalInfo.phone || ''}
+                      onChange={(e) => handleChange('personalInfo', 'phone', e.target.value)}
+                    />
+                  </Form.Group>
+                  <Form.Group controlId="email">
+                    <Form.Label>Email Address</Form.Label>
+                    <Form.Control
+                      type="email"
+                      value={formData.personalInfo.email || ''}
+                      onChange={(e) => handleChange('personalInfo', 'email', e.target.value)}
+                    />
+                  </Form.Group>
                 </Col>
                 <Col md={6}>
                   <Form.Group controlId="gender">
@@ -212,28 +228,96 @@ function AddEmployee() {
                       <option value="annually">Annually</option>
                     </Form.Control>
                   </Form.Group>
-                </Col>
-                <Col md={6}>
-                  <Form.Group controlId="salary">
-                    <Form.Label>Salary {formData.payrollTaxInfo.salaryType === 'hourly' ? '£/hour' : '£/year'}</Form.Label>
+                  <Form.Group controlId="payFrequency">
+                    <Form.Label>Pay Frequency</Form.Label>
+                    <Form.Control
+                      as="select"
+                      value={formData.payrollTaxInfo.payFrequency || ''}
+                      onChange={(e) => handleChange('payrollTaxInfo', 'payFrequency', e.target.value)}
+                    >
+                      <option value="">Select Frequency</option>
+                      <option value="Weekly">Weekly</option>
+                      <option value="Bi-weekly">Bi-weekly</option>
+                      <option value="Monthly">Monthly</option>
+                    </Form.Control>
+                  </Form.Group>
+                  <Form.Group controlId="baseSalary">
+                    <Form.Label>Base Salary/Wage</Form.Label>
                     <Form.Control
                       type="number"
-                      value={formData.payrollTaxInfo.salary || ''}
-                      onChange={(e) => handleChange('payrollTaxInfo', 'salary', e.target.value)}
+                      value={formData.payrollTaxInfo.baseSalary || ''}
+                      onChange={(e) => handleChange('payrollTaxInfo', 'baseSalary', e.target.value)}
+                      min="0"
+                      step="0.01"
+                    />
+                  </Form.Group>
+                  <Form.Group controlId="bonuses">
+                    <Form.Label>Bonuses/Incentives</Form.Label>
+                    <Form.Control
+                      type="number"
+                      value={formData.payrollTaxInfo.bonuses || ''}
+                      onChange={(e) => handleChange('payrollTaxInfo', 'bonuses', e.target.value)}
+                      min="0"
+                      step="0.01"
+                    />
+                  </Form.Group>
+                  <Form.Group controlId="overtimePay">
+                    <Form.Label>Overtime Pay (if applicable)</Form.Label>
+                    <Form.Control
+                      type="number"
+                      value={formData.payrollTaxInfo.overtimePay || ''}
+                      onChange={(e) => handleChange('payrollTaxInfo', 'overtimePay', e.target.value)}
                       min="0"
                       step="0.01"
                     />
                   </Form.Group>
                 </Col>
-              </Row>
-              <Row>
                 <Col md={6}>
-                  <Form.Group controlId="taxId">
-                    <Form.Label>Tax ID</Form.Label>
+                  <Form.Group controlId="taxDeductions">
+                    <Form.Label>Tax Deductions (Income Tax, National Insurance, etc.)</Form.Label>
+                    <Form.Control
+                      type="number"
+                      value={formData.payrollTaxInfo.taxDeductions || ''}
+                      onChange={(e) => handleChange('payrollTaxInfo', 'taxDeductions', e.target.value)}
+                      min="0"
+                      step="0.01"
+                    />
+                  </Form.Group>
+                  <Form.Group controlId="pensionContributions">
+                    <Form.Label>Pension Contributions</Form.Label>
+                    <Form.Control
+                      type="number"
+                      value={formData.payrollTaxInfo.pensionContributions || ''}
+                      onChange={(e) => handleChange('payrollTaxInfo', 'pensionContributions', e.target.value)}
+                      min="0"
+                      step="0.01"
+                    />
+                  </Form.Group>
+                  
+                  <Form.Group controlId="taxCode">
+                    <Form.Label>Tax Code</Form.Label>
                     <Form.Control
                       type="text"
-                      value={formData.payrollTaxInfo.taxId || ''}
-                      onChange={(e) => handleChange('payrollTaxInfo', 'taxId', e.target.value)}
+                      value={formData.payrollTaxInfo.taxCode || ''}
+                      onChange={(e) => handleChange('payrollTaxInfo', 'taxCode', e.target.value)}
+                    />
+                  </Form.Group>
+                  <Form.Group controlId="nationalInsuranceNumber">
+                    <Form.Label>National Insurance Number</Form.Label>
+                    <Form.Control
+                      type="text"
+                      value={formData.payrollTaxInfo.nationalInsuranceNumber || ''}
+                      onChange={(e) => handleChange('payrollTaxInfo', 'nationalInsuranceNumber', e.target.value)}
+                    />
+                  </Form.Group>
+                  <Form.Group controlId="studentLoanRepayment">
+                    <Form.Label>Student Loan Repayment (if applicable)</Form.Label>
+                    <Form.Control
+                      type="number"
+                      value={formData.payrollTaxInfo.studentLoanRepayment || ''}
+                      onChange={(e) => handleChange('payrollTaxInfo', 'studentLoanRepayment', e.target.value)}
+                      min="0"
+                      step="0.01"
                     />
                   </Form.Group>
                 </Col>
@@ -253,24 +337,48 @@ function AddEmployee() {
               <h2 className='page-title'>Work Preference</h2>
               <Row>
                 <Col md={6}>
-                  <Form.Group controlId="workHours">
-                    <Form.Label>Work Hours</Form.Label>
+                  <Form.Group controlId="workEnvironment">
+                    <Form.Label>Preferred Work Environment</Form.Label>
                     <Form.Control
-                      type="text"
-                      value={formData.workPreference.workHours || ''}
-                      onChange={(e) => handleChange('workPreference', 'workHours', e.target.value)}
-                    />
+                      as="select"
+                      value={formData.workPreference.workEnvironment || ''}
+                      onChange={(e) => handleChange('workPreference', 'workEnvironment', e.target.value)}
+                    >
+                      <option value="">Select Environment</option>
+                      <option value="Remote">Remote</option>
+                      <option value="Hybrid">Hybrid</option>
+                      <option value="On-site">On-site</option>
+                    </Form.Control>
                   </Form.Group>
+                  
                 </Col>
                 <Col md={6}>
-                  <Form.Group controlId="remoteWork">
-                    <Form.Label>Remote Work</Form.Label>
+                  <Form.Group controlId="workSchedule">
+                    <Form.Label>Work Schedule</Form.Label>
                     <Form.Control
-                      type="text"
-                      value={formData.workPreference.remoteWork || ''}
-                      onChange={(e) => handleChange('workPreference', 'remoteWork', e.target.value)}
-                    />
+                      as="select"
+                      value={formData.workPreference.workSchedule || ''}
+                      onChange={(e) => handleChange('workPreference', 'workSchedule', e.target.value)}
+                    >
+                      <option value="">Select Schedule</option>
+                      <option value="Full-time">Full-time</option>
+                      <option value="Part-time">Part-time</option>
+                      <option value="Flexible Hours">Flexible Hours</option>
+                    </Form.Control>
                   </Form.Group>
+                  
+                  {(formData.workPreference.workSchedule === 'Full-time' || formData.workPreference.workSchedule === 'Part-time') && (
+                    <Form.Group controlId="guaranteedHours">
+                      <Form.Label>Guaranteed Hours</Form.Label>
+                      <Form.Control
+                        type="number"
+                        value={formData.workPreference.guaranteedHours || ''}
+                        onChange={(e) => handleChange('workPreference', 'guaranteedHours', e.target.value)}
+                        min="0"
+                        step="1"
+                      />
+                    </Form.Group>
+                  )}
                 </Col>
               </Row>
               <div className="button-container">

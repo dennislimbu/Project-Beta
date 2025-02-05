@@ -1,0 +1,19 @@
+.add-link,
+.filter{
+    background-color: #31184C;
+    color: #fff;
+    text-decoration: none; 
+}
+
+.add-link:hover,
+.filter:hover {
+    background-color: #4A2A6A;
+    color: #fff;
+    text-decoration: none;
+}
+
+.add-link{
+    width:fit-content;
+    display: flex;
+    margin-left: 50%;
+}   

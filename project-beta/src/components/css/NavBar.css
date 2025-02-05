@@ -87,33 +87,6 @@
   width: 100%;
 }
 
-/* Accordion Custom Styles */
-.accordion-button {
-  background-color: #31184C;
-  color: #fff;
-  border: none;
-  border-radius: 0; /* Remove border-radius */
-}
-
-.accordion-button:not(.collapsed) {
-  background-color: #442569;
-  color: #fff;
-  border-radius: 0; /* Remove border-radius */
-}
-
-.accordion-button:focus {
-  box-shadow: none;
-}
-
-.accordion-body {
-  background-color: #442569;
-  color: #fff;
-}
-
-.accordion-item {
-  border: none;
-}
-
 .nav-dropdown-item.active {
   background-color: #31184C;
   color: #fff;
@@ -121,12 +94,6 @@
 
 /* Media Queries for Tablet */
 @media (max-width: 768px) {
-  .login-ctn, .register-ctn {
-    padding: 20px;
-    width: 100%;
-    height: fit-content;
-  }
-
   form {
     width: 100%;
   }
@@ -134,10 +101,6 @@
 
 /* Media Queries for Mobile */
 @media (max-width: 576px) {
-  .login-ctn, .register-ctn {
-    padding: 10px;
-    width: 100%; 
-  }
 
   form {
     width: 100%; 

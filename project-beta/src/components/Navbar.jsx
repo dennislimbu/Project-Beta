@@ -4,6 +4,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faTachometerAlt, faCalendarAlt, faBell, faCog, faUsers, faUser, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import supabase from '../helper/supabaseClient';
+import './css/header.css';
 import './css/NavBar.css';
 
 function Sidebar() {
@@ -27,10 +28,10 @@ function Sidebar() {
   };
 
   return (
-    <Navbar className="navbar-custom flex-column vh-90">
+    <Navbar className="navbar-custom flex-column vh-80">
       <div className='container-fluid h-100'>
         <div className='row h-100 w-70'>
-          <Navbar.Collapse id="basic-navbar-nav" className="d-flex flex-column justify-content-start align-items-start mt-1 mb-1 h-auto">
+          <Navbar.Collapse id="basic-navbar-nav" className="d-flex flex-column justify-content-start align-items-start mt-3 mb-1 h-auto">
             {/* Search Content */}
             <Form className="d-flex align-items-start w-100 mt-5">
               <FormControl
@@ -57,10 +58,10 @@ function Sidebar() {
               <hr className="divider" />
               {/* Drop Down Content */}
               <NavDropdown title={<span><FontAwesomeIcon icon={faUsers} className="me-2" /><span className="nav-text">Employees</span></span>} id="basic-nav-dropdown" className="push-down-dropdown w-100">
-                <NavDropdown.Item eventKey="/employees/list" href="#" className={activeKey === '/employees/list' ? 'active' : ''}>List</NavDropdown.Item>
-                <NavDropdown.Item eventKey="/employees/add" href="#" className={activeKey === '/employees/add' ? 'active' : ''}>Add Employee</NavDropdown.Item>
-                <NavDropdown.Item eventKey="/employees/employee" href="#" className={activeKey === '/employees/employee' ? 'active' : ''}>Employee</NavDropdown.Item>
-              </NavDropdown>
+                <NavDropdown.Item eventKey="/employees/list" className={activeKey === '/employees/list' ? 'active' : ''}>List</NavDropdown.Item>
+                <NavDropdown.Item eventKey="/employees/add" className={activeKey === '/employees/add' ? 'active' : ''}>Add Employee</NavDropdown.Item>
+                <NavDropdown.Item eventKey="/employee" className={activeKey === '/employee' ? 'active' : ''}>Employee</NavDropdown.Item>
+                </NavDropdown>
               <hr className="divider" />
               <Nav.Link eventKey="/notifications" href="#" className={activeKey === '/notifications' ? 'active' : ''}>
                 <FontAwesomeIcon icon={faBell} className="me-2" />
